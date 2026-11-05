@@ -10914,10 +10914,22 @@ textarea.form-control-lg {
   padding-bottom: 7rem;
 }
 .offer-section .offer-card {
-  max-width: 32rem;
   background: linear-gradient(180deg, #1c2129, #14181e);
   border: 2px solid #f2c14e;
   border-radius: 1.4rem;
+  padding: 2rem;
+}
+.offer-section .offer-card.featured {
+  box-shadow: 0 0 0 4px rgba(242, 193, 78, 0.2);
+}
+.offer-section .offer-card h3, .offer-section .offer-card .h3 {
+  font-size: 1.3rem;
+}
+.offer-section .goat-card {
+  max-width: 48rem;
+  background: #181d24;
+  border: 1px solid #262d36;
+  border-radius: 1.2rem;
   padding: 2rem;
 }
 .offer-section .offer-list {

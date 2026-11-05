@@ -7,14 +7,19 @@
 const CONFIG = {
     inicioOferta: '2026-11-06T00:00:00-05:00', // inicio de la promo (zona horaria UTC-5)
     finOferta: '2026-11-30T23:59:59-05:00',    // fin de la promo
-    enlacePago: 'https://[TU-ENLACE-DE-PAGO]',  // Hotmart, Stripe, PayPal...
-    whatsapp: '[NUMERO SIN +, ej. 573001234567]'
+    // Enlaces de pago NUEVOS de FastPayDirect con el precio Black Friday.
+    // (Los actuales cobran precio completo: 2m .../6ab8508cbaea3cadef54f85b, 12m .../6ab850a0c0e70c7fefb70c7b)
+    pagoElite2m: 'https://link.fastpaydirect.com/payment-link/[NUEVO-ENLACE-2M]',
+    pagoElite12m: 'https://link.fastpaydirect.com/payment-link/[NUEVO-ENLACE-12M]',
+    whatsapp: '573159160952'
 };
 // ========================================
 
-document.getElementById('paylink').href = CONFIG.enlacePago;
-document.getElementById('walink').href =
-    'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent('Hola, tengo una duda sobre la oferta de Black Friday');
+const wa = msg => 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(msg);
+document.getElementById('paylink2m').href = CONFIG.pagoElite2m;
+document.getElementById('paylink12m').href = CONFIG.pagoElite12m;
+document.getElementById('walink').href = wa('Hola, quiero el descuento Black Friday de Trading en Paz');
+document.getElementById('goatlink').href = wa('Hola, quiero agendar la entrevista para el programa GOAT (Black Friday)');
 document.getElementById('year').textContent = new Date().getFullYear();
 
 const end = new Date(CONFIG.finOferta).getTime();

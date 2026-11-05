@@ -59,12 +59,14 @@ $tep-green: #3ecf8e;
     padding-top: 7rem;
     padding-bottom: 7rem;
     .offer-card {
-        max-width: 32rem;
         background: linear-gradient(180deg, #1c2129, #14181e);
         border: 2px solid $primary;
         border-radius: 1.4rem;
         padding: 2rem;
     }
+    .offer-card.featured { box-shadow: 0 0 0 4px rgba($primary, .2); }
+    .offer-card h3 { font-size: 1.3rem; }
+    .goat-card { max-width: 48rem; background: $tep-card; border: 1px solid $tep-line; border-radius: 1.2rem; padding: 2rem; }
     .offer-list {
         list-style: none;
         padding: 0;
