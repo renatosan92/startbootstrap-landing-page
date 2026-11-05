@@ -1,0 +1,47 @@
+<!-- ===== RECUADRO PROMOCIÓN BLACK FRIDAY · pegar justo después de <main> en la página principal ===== -->
+<!-- Quitar después del 30 de noviembre (o se oculta solo al terminar la cuenta atrás). -->
+<style>
+.tep-bf{max-width:1120px;margin:18px auto 0;padding:0 20px}
+.tep-bf a{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;text-decoration:none;color:#faf7ff;
+  background:linear-gradient(125deg,#251535,#110b1b);border:1px solid #e6c87c;border-radius:16px;padding:18px 22px;transition:border-color .15s,transform .15s}
+.tep-bf a:hover{transform:translateY(-1px);border-color:#f5dfaa}
+.tep-bf .t{font-weight:900;letter-spacing:.12em;font-size:clamp(16px,2.2vw,22px);color:#f5dfaa;line-height:1.2}
+.tep-bf .s{color:#b9b1c6;font-size:13px;margin-top:4px}
+.tep-bf .cd{display:flex;gap:8px}
+.tep-bf .cd span{background:#09070e;border:1px solid #352943;border-radius:8px;min-width:56px;padding:6px 4px;text-align:center}
+.tep-bf .cd b{display:block;font-size:22px;color:#f5dfaa;font-variant-numeric:tabular-nums;line-height:1.1}
+.tep-bf .cd small{font-size:10px;color:#b9b1c6;text-transform:uppercase;letter-spacing:.1em}
+.tep-bf .go{background:linear-gradient(110deg,#bd8c38,#f5dfaa,#c89d50);color:#1a1208;font-weight:800;border-radius:8px;padding:12px 18px;white-space:nowrap}
+@media(max-width:640px){.tep-bf a{padding:16px}.tep-bf .go{width:100%;text-align:center}.tep-bf .cd span{min-width:52px}}
+</style>
+<div class="tep-bf" id="tep-bf">
+  <a href="/black-friday/" aria-label="Ver la promoción Black Friday">
+    <div>
+      <div class="t">PROMOCIÓN BLACK FRIDAY</div>
+      <div class="s">Del 6 al 30 de noviembre · ELITE, GOAT y upgrade a GOAT</div>
+    </div>
+    <div class="cd" aria-label="Días que quedan de promoción">
+      <span><b data-bf="d">00</b><small>días</small></span>
+      <span><b data-bf="h">00</b><small>horas</small></span>
+      <span><b data-bf="m">00</b><small>min</small></span>
+    </div>
+    <span class="go">Ver promoción →</span>
+  </a>
+</div>
+<script>
+(function(){
+  var end=new Date('2026-11-30T23:59:59-05:00').getTime();
+  var box=document.getElementById('tep-bf');
+  function p(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var d=end-Date.now();
+    if(d<=0){box.style.display='none';return;}
+    box.querySelector('[data-bf="d"]').textContent=p(Math.floor(d/864e5));
+    box.querySelector('[data-bf="h"]').textContent=p(Math.floor(d/36e5)%24);
+    box.querySelector('[data-bf="m"]').textContent=p(Math.floor(d/6e4)%60);
+    setTimeout(tick,30000);
+  }
+  tick();
+})();
+</script>
+<!-- ===== FIN RECUADRO BLACK FRIDAY ===== -->
