@@ -1,5 +1,120 @@
-// 
+//
 // Global
-// 
+//
 
-// Use this file to add styling to your theme
+$tep-surface: #13171c;
+$tep-card: #181d24;
+$tep-line: #262d36;
+$tep-green: #3ecf8e;
+
+.text-muted { color: #9aa5b1 !important; }
+
+.btn-primary {
+    color: #111;
+    font-weight: 700;
+    &:hover, &:focus { color: #111; background-color: darken($primary, 8%); border-color: darken($primary, 8%); }
+}
+
+.promo-bar {
+    background: $primary;
+    color: #111;
+    text-align: center;
+    font-weight: 700;
+    font-size: .875rem;
+    padding: .6rem 1rem;
+}
+
+.navbar { background: $body-bg; }
+
+.price-row {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .price-old { color: #9aa5b1; text-decoration: line-through; font-size: 1.5rem; }
+    .price-new { color: $primary; font-size: 3rem; font-weight: 900; line-height: 1; }
+    .price-off { background: $tep-green; color: #052; font-weight: 700; border-radius: .5rem; padding: .2rem .6rem; }
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: .75rem;
+    .cd {
+        background: rgba(11, 13, 16, .75);
+        border: 1px solid $tep-line;
+        border-radius: .75rem;
+        min-width: 4.5rem;
+        padding: .75rem .5rem;
+        b { display: block; font-size: 1.9rem; font-variant-numeric: tabular-nums; }
+        small { color: #cfd6dd; font-size: .7rem; text-transform: uppercase; letter-spacing: 1px; }
+    }
+}
+
+.features-icons, .testimonials, .faq { background: $tep-surface; }
+.showcase .showcase-text { background: $body-bg; }
+
+.offer-section {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    .offer-card {
+        max-width: 32rem;
+        background: linear-gradient(180deg, #1c2129, #14181e);
+        border: 2px solid $primary;
+        border-radius: 1.4rem;
+        padding: 2rem;
+    }
+    .offer-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+        li {
+            position: relative;
+            padding: .6rem 0 .6rem 1.9rem;
+            border-bottom: 1px solid $tep-line;
+            &::before { content: "✓"; position: absolute; left: .25rem; color: $tep-green; font-weight: 900; }
+        }
+    }
+}
+
+.faq {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    .accordion { max-width: 48rem; }
+    .accordion-item { background: $tep-card; border-color: $tep-line; color: $body-color; }
+    .accordion-button { background: $tep-card; color: $body-color; font-weight: 700; font-size: 1.05rem;
+        &:not(.collapsed) { color: $primary; box-shadow: none; }
+        &::after { filter: invert(1); }
+    }
+    .accordion-body { color: #9aa5b1; }
+}
+
+.footer {
+    background: $body-bg;
+    border-top: 1px solid $tep-line;
+    a { color: $body-color; text-decoration: none; &:hover { color: $primary; } }
+    .risk { background: $tep-surface; border: 1px solid $tep-line; border-radius: .75rem; padding: 1rem; color: #9aa5b1; }
+}
+
+.wa-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1030;
+    background: #25d366;
+    color: #05301a;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: .75rem 1.1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+    &:hover { color: #05301a; filter: brightness(1.05); }
+}
+
+body.ended .cta { pointer-events: none; opacity: .5; }
+
+@media (max-width: 575.98px) {
+    .countdown .cd { min-width: 3.9rem; b { font-size: 1.5rem; } }
+    .price-row .price-new { font-size: 2.5rem; }
+}

@@ -1,110 +1,99 @@
 doctype html
-html(lang='en')
+html(lang='es')
 
     head
 
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
-        meta(name='author', content='')
+        meta(name='description', content='Black Friday para estudiantes de Trading en Paz: descuento especial del 6 al 30 de noviembre.')
+        meta(name='author', content='Trading en Paz')
 
-        title Landing Page - Start Bootstrap Theme
+        title Black Friday para estudiantes | Trading en Paz
 
         // Favicon
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
 
         // Bootstrap icons
-        link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css', rel='stylesheet', type='text/css')
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css', rel='stylesheet', type='text/css')
 
         // Google fonts
-        link(href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic', rel='stylesheet', type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap', rel='stylesheet', type='text/css')
 
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
     body
 
+        //- CÓMO EDITAR: cambia los textos entre [CORCHETES] y los valores de CONFIG en src/js/scripts.js
+
+        // Promo bar
+        .promo-bar#topbar BLACK FRIDAY PARA ESTUDIANTES · [X]% DE DESCUENTO · DEL 6 AL 30 DE NOVIEMBRE
+
         // Navigation
-        nav.navbar.navbar-light.bg-light.static-top
+        nav.navbar.navbar-dark.static-top
             .container
-                a.navbar-brand(href='#!') Start Bootstrap
-                a.btn.btn-primary(href='#signup') Sign Up
+                a.navbar-brand.fw-bold(href='#!') TRADING <span class="text-primary">EN PAZ</span>
+                a.btn.btn-primary.d-none.d-sm-inline-block(href='#oferta') Ver la oferta
 
         // Masthead
         header.masthead
             .container.position-relative
                 .row.justify-content-center
-                    .col-xl-6
+                    .col-xl-8
                         .text-center.text-white
-                            // Page heading
-                            h1.mb-5 Generate more leads with a professional landing page!
+                            span.badge.rounded-pill.border.border-primary.text-primary.mb-4.px-3.py-2 EXCLUSIVO PARA ESTUDIANTES
+                            h1.mb-4 Opera con calma.<br><span class="text-primary">[X]% de descuento</span> este Black Friday.
+                            p.lead.mb-4 [Una frase sobre lo que aprenden: un método claro para operar sin ansiedad, con gestión de riesgo y acompañamiento real.]
+                            .price-row.mb-4
+                                span.price-old [$PRECIO NORMAL]
+                                span.price-new [$PRECIO BF]
+                                span.price-off -[X]%
+                            a.btn.btn-primary.btn-lg.px-5.cta(href='#oferta') Quiero mi descuento
 
-                            // Signup form
-
-                            // * * * * * * * * * * * * * * *
-                            // * * SB Forms Contact Form * *
-                            // * * * * * * * * * * * * * * *
-
-                            // This form is pre-integrated with SB Forms.
-                            // To make this form functional, sign up at
-                            // https://startbootstrap.com/solution/contact-forms
-                            // to get an API token!
-
-                            form.form-subscribe#contactForm(data-sb-form-api-token='API_TOKEN')
-
-                                // Email address input
-                                .row
-                                    .col
-                                        input#emailAddress.form-control.form-control-lg(type='email' placeholder='Email Address' data-sb-validations='required,email')
-                                        .invalid-feedback.text-white(data-sb-feedback='emailAddress:required')
-                                            | Email Address is required.
-                                        .invalid-feedback.text-white(data-sb-feedback='emailAddress:email')
-                                            | Email Address Email is not valid.
-
-                                    .col-auto
-                                        button#submitButton.btn.btn-primary.btn-lg.disabled(type='submit') Submit
-
-                                // Submit success message
-                                //
-                                // This is what your users will see when the form
-                                // has successfully submitted
-
-                                #submitSuccessMessage.d-none
-                                    .text-center.mb-3
-                                        .fw-bolder Form submission successful!
-                                        p To activate this form, sign up at
-                                        a.text-white(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
-
-                                // Submit error message
-                                //
-                                // This is what your users will see when there is
-                                // an error submitting the form
-
-                                #submitErrorMessage.d-none
-                                    .text-center.text-danger.mb-3 Error sending message!
+                            .countdown.mt-5(aria-label='Tiempo restante de la oferta')
+                                .cd
+                                    b#d 00
+                                    small días
+                                .cd
+                                    b#h 00
+                                    small horas
+                                .cd
+                                    b#m 00
+                                    small min
+                                .cd
+                                    b#s 00
+                                    small seg
+                            p.small.mt-2.mb-0#cdnote La oferta termina el 30 de noviembre a las 23:59.
 
         // Icons Grid
-        section.features-icons.bg-light.text-center
+        section.features-icons.text-center
             .container
+                h2.mb-5 Qué vas a conseguir
                 .row
-                    .col-lg-4
-                        .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+                    .col-lg-3.col-md-6
+                        .features-icons-item.mx-auto.mb-5
                             .features-icons-icon.d-flex
-                                i.bi-window.m-auto.text-primary
-                            h3 Fully Responsive
-                            p.lead.mb-0 This theme will look great on any device, no matter the size!
-                    .col-lg-4
-                        .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+                                i.bi-graph-up-arrow.m-auto.text-primary
+                            h3 [Beneficio 1]
+                            p.lead.mb-0 [Un plan de trading propio, con reglas claras de entrada y salida.]
+                    .col-lg-3.col-md-6
+                        .features-icons-item.mx-auto.mb-5
                             .features-icons-icon.d-flex
-                                i.bi-layers.m-auto.text-primary
-                            h3 Bootstrap 5 Ready
-                            p.lead.mb-0 Featuring the latest build of the new Bootstrap 5 framework!
-                    .col-lg-4
-                        .features-icons-item.mx-auto.mb-0.mb-lg-3
+                                i.bi-shield-check.m-auto.text-primary
+                            h3 [Beneficio 2]
+                            p.lead.mb-0 [Gestión del riesgo para proteger tu capital.]
+                    .col-lg-3.col-md-6
+                        .features-icons-item.mx-auto.mb-5
                             .features-icons-icon.d-flex
-                                i.bi-terminal.m-auto.text-primary
-                            h3 Easy to Use
-                            p.lead.mb-0 Ready to use with your own content, or customize the source files!
+                                i.bi-heart-pulse.m-auto.text-primary
+                            h3 [Beneficio 3]
+                            p.lead.mb-0 [Control emocional para operar sin miedo ni impulsos.]
+                    .col-lg-3.col-md-6
+                        .features-icons-item.mx-auto.mb-5
+                            .features-icons-icon.d-flex
+                                i.bi-people.m-auto.text-primary
+                            h3 [Beneficio 4]
+                            p.lead.mb-0 [Comunidad y mentorías para no operar solo.]
 
         // Image Showcases
         section.showcase
@@ -112,133 +101,138 @@ html(lang='en')
                 .row.g-0
                     .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-1.jpg');")
                     .col-lg-6.order-lg-1.my-auto.showcase-text
-                        h2 Fully Responsive Design
-                        p.lead.mb-0
-                            | When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!
+                        h2 [Cómo es el método Trading en Paz]
+                        p.lead.mb-0 [Explica en 2 o 3 frases cómo enseñas y por qué es diferente.]
                 .row.g-0
                     .col-lg-6.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-2.jpg');")
                     .col-lg-6.my-auto.showcase-text
-                        h2 Updated For Bootstrap 5
-                        p.lead.mb-0
-                            | Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!
+                        h2 [Mentorías 1 a 1]
+                        p.lead.mb-0 [Cuenta qué pasa en una mentoría y cómo acompañas al alumno.]
                 .row.g-0
                     .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-3.jpg');")
                     .col-lg-6.order-lg-1.my-auto.showcase-text
-                        h2 Easy to Use & Customize
-                        p.lead.mb-0
-                            | Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!
+                        h2 [Comunidad]
+                        p.lead.mb-0 [Describe la comunidad: dónde está, cuánta gente y qué comparten.]
+
+        // Offer
+        section#oferta.offer-section
+            .container
+                h2.text-center.mb-2 La oferta de Black Friday
+                p.text-center.text-muted.mb-5 Solo para estudiantes de Trading en Paz, del 6 al 30 de noviembre.
+                .offer-card.mx-auto.text-center
+                    .price-row.mb-3
+                        span.price-old [$PRECIO NORMAL]
+                        span.price-new [$PRECIO BF]
+                    ul.offer-list.text-start
+                        li [Producto o módulo incluido 1]
+                        li [Producto o módulo incluido 2]
+                        li [Mentoría o sesión en vivo incluida]
+                        li [Acceso a la comunidad]
+                        li [Bono exclusivo de Black Friday]
+                    a.btn.btn-primary.btn-lg.w-100.cta#paylink(href='#', rel='noopener') Comprar con [X]% de descuento
+                    p.small.text-muted.mt-3.mb-0 [Código de descuento: BLACKFRIDAY · Política de devolución, si la tienes]
 
         // Testimonials
-        section.testimonials.text-center.bg-light
+        section.testimonials.text-center
             .container
-                h2.mb-5 What people are saying...
+                h2.mb-5 Lo que dicen los alumnos
                 .row
                     .col-lg-4
                         .testimonial-item.mx-auto.mb-5.mb-lg-0
-                            img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-1.jpg', alt='...')
-                            h5 Margaret E.
-                            p.font-weight-light.mb-0 "This is fantastic! Thanks so much guys!"
+                            img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-1.jpg', alt='Alumno de Trading en Paz')
+                            h5 [Nombre, ciudad]
+                            p.font-weight-light.mb-0 "[Testimonio real del alumno 1]"
                     .col-lg-4
                         .testimonial-item.mx-auto.mb-5.mb-lg-0
-                            img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-2.jpg', alt='...')
-                            h5 Fred S.
-                            p.font-weight-light.mb-0
-                                | "Bootstrap is amazing. I've been using it to create lots of super nice landing pages."
+                            img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-2.jpg', alt='Alumno de Trading en Paz')
+                            h5 [Nombre, ciudad]
+                            p.font-weight-light.mb-0 "[Testimonio real del alumno 2]"
                     .col-lg-4
                         .testimonial-item.mx-auto.mb-5.mb-lg-0
-                            img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-3.jpg', alt='...')
-                            h5 Sarah W.
-                            p.font-weight-light.mb-0 "Thanks so much for making these free resources available to us!"
+                            img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-3.jpg', alt='Alumno de Trading en Paz')
+                            h5 [Nombre, ciudad]
+                            p.font-weight-light.mb-0 "[Testimonio real del alumno 3]"
+
+        // FAQ
+        section.faq
+            .container
+                h2.text-center.mb-5 Preguntas frecuentes
+                .accordion.mx-auto#faq
+                    .accordion-item
+                        h3.accordion-header
+                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#q1') ¿Quién puede usar este descuento?
+                        .accordion-collapse.collapse#q1(data-bs-parent='#faq')
+                            .accordion-body [Alumnos actuales y antiguos de Trading en Paz.]
+                    .accordion-item
+                        h3.accordion-header
+                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#q2') ¿Hasta cuándo está disponible?
+                        .accordion-collapse.collapse#q2(data-bs-parent='#faq')
+                            .accordion-body Del 6 al 30 de noviembre a las 23:59[, o hasta agotar las N plazas].
+                    .accordion-item
+                        h3.accordion-header
+                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#q3') ¿Cómo aplico el descuento?
+                        .accordion-collapse.collapse#q3(data-bs-parent='#faq')
+                            .accordion-body [Pulsa el botón de compra: el precio ya incluye el descuento. / Introduce el código BLACKFRIDAY al pagar.]
+                    .accordion-item
+                        h3.accordion-header
+                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#q4') ¿Qué métodos de pago aceptan?
+                        .accordion-collapse.collapse#q4(data-bs-parent='#faq')
+                            .accordion-body [Tarjeta, PayPal, transferencia...]
+                    .accordion-item
+                        h3.accordion-header
+                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#q5') ¿Necesito experiencia previa?
+                        .accordion-collapse.collapse#q5(data-bs-parent='#faq')
+                            .accordion-body [Tu respuesta.]
 
         // Call to Action
-        section#signup.call-to-action.text-white.text-center
+        section.call-to-action.text-white.text-center
             .container.position-relative
                 .row.justify-content-center
                     .col-xl-6
-                        h2.mb-4 Ready to get started? Sign up now!
-                        // Signup form
-                        
-                        // * * * * * * * * * * * * * * *
-                        // * * SB Forms Contact Form * *
-                        // * * * * * * * * * * * * * * *
-
-                        // This form is pre-integrated with SB Forms.
-                        // To make this form functional, sign up at
-                        // https://startbootstrap.com/solution/contact-forms
-                        // to get an API token!
-
-                        form.form-subscribe#contactFormFooter(data-sb-form-api-token='API_TOKEN')
-
-                            // Email address input
-                            .row
-                                .col
-                                    input#emailAddressBelow.form-control.form-control-lg(type='email' placeholder='Email Address' data-sb-validations='required,email')
-                                    .invalid-feedback.text-white(data-sb-feedback='emailAddressBelow:required')
-                                        | Email Address is required.
-                                    .invalid-feedback.text-white(data-sb-feedback='emailAddressBelow:email')
-                                        | Email Address Email is not valid.
-
-                                .col-auto
-                                    button#submitButton.btn.btn-primary.btn-lg.disabled(type='submit') Submit
-
-                            // Submit success message
-                            //
-                            // This is what your users will see when the form
-                            // has successfully submitted
-
-                            #submitSuccessMessage.d-none
-                                .text-center.mb-3
-                                    .fw-bolder Form submission successful!
-                                    p To activate this form, sign up at
-                                    a.text-white(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
-
-                            // Submit error message
-                            //
-                            // This is what your users will see when there is
-                            // an error submitting the form
-
-                            #submitErrorMessage.d-none
-                                .text-center.text-danger.mb-3 Error sending message!
+                        h2.mb-3 Tu descuento termina el 30 de noviembre
+                        p.lead.mb-4 [No vuelve a estar a este precio hasta el próximo año.]
+                        a.btn.btn-primary.btn-lg.px-5.cta(href='#oferta') Aprovechar el [X]% de descuento
 
         // Footer
-        footer.footer.bg-light
+        footer.footer
             .container
+                p.risk.small.mb-4
+                    strong Aviso de riesgo:
+                    |  el trading conlleva un alto riesgo y puede provocar la pérdida de todo el capital invertido. Los resultados pasados no garantizan resultados futuros. El contenido de Trading en Paz es educativo y no constituye asesoramiento financiero.
                 .row
                     .col-lg-6.h-100.text-center.text-lg-start.my-auto
                         ul.list-inline.mb-2
                             li.list-inline-item
-                                a(href='#!') About
+                                a(href='https://tradingenpaz.com') Tradingenpaz.com
                             li.list-inline-item ⋅
                             li.list-inline-item
-                                a(href='#!') Contact
+                                a(href='mailto:[EMAIL]') Contacto
                             li.list-inline-item ⋅
                             li.list-inline-item
-                                a(href='#!') Terms of Use
+                                a(href='#!') Términos
                             li.list-inline-item ⋅
                             li.list-inline-item
-                                a(href='#!') Privacy Policy
-                        p.text-muted.small.mb-4.mb-lg-0 &copy; Your Website 2023. All Rights Reserved.
+                                a(href='#!') Privacidad
+                        p.text-muted.small.mb-4.mb-lg-0 &copy; <span id="year">2026</span> Trading en Paz. Todos los derechos reservados.
                     .col-lg-6.h-100.text-center.text-lg-end.my-auto
                         ul.list-inline.mb-0
                             li.list-inline-item.me-4
-                                a(href='#!')
-                                    i.bi-facebook.fs-3
+                                a(href='#!', aria-label='YouTube')
+                                    i.bi-youtube.fs-3
                             li.list-inline-item.me-4
-                                a(href='#!')
-                                    i.bi-twitter.fs-3
-                            li.list-inline-item
-                                a(href='#!')
+                                a(href='#!', aria-label='Instagram')
                                     i.bi-instagram.fs-3
+                            li.list-inline-item
+                                a(href='#!', aria-label='TikTok')
+                                    i.bi-tiktok.fs-3
+
+        // WhatsApp
+        a.wa-button#walink(href='#', target='_blank', rel='noopener')
+            i.bi-whatsapp.me-2
+            | ¿Dudas? WhatsApp
 
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
 
         // Core theme JS
         script(src='js/scripts.js')
-
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
