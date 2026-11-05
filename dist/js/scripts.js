@@ -18,7 +18,7 @@ const CONFIG = {
 const wa = msg => 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(msg);
 document.getElementById('paylink2m').href = CONFIG.pagoElite2m;
 document.getElementById('paylink12m').href = CONFIG.pagoElite12m;
-document.getElementById('walink').href = wa('Hola, quiero el descuento Black Friday de Trading en Paz');
+document.querySelectorAll('.wa-link').forEach(a => { a.href = wa('Hola, quiero el descuento Black Friday de Trading en Paz'); });
 document.getElementById('goatlink').href = wa('Hola, quiero agendar la entrevista para el programa GOAT (Black Friday)');
 document.getElementById('year').textContent = new Date().getFullYear();
 

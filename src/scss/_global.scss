@@ -1,122 +1,139 @@
 //
-// Global
+// Trading en Paz theme
 //
 
-$tep-surface: #13171c;
-$tep-card: #181d24;
-$tep-line: #262d36;
-$tep-green: #3ecf8e;
+$bg: #09070e;
+$panel: #15101f;
+$panel-2: #110b1b;
+$line: #352943;
+$muted: #b9b1c6;
+$gold: #f5dfaa;
+$gold-2: #e6c87c;
+$purple: #9764c7;
+$gold-grad: linear-gradient(110deg, #bd8c38, #f5dfaa, #c89d50);
 
-.text-muted { color: #9aa5b1 !important; }
+body { background: $bg; color: #faf7ff; font-size: 15px; }
+a { color: inherit; }
+.muted { color: $muted; }
+section { padding: 5.5rem 0; }
 
-.btn-primary {
-    color: #111;
-    font-weight: 700;
-    &:hover, &:focus { color: #111; background-color: darken($primary, 8%); border-color: darken($primary, 8%); }
+h1, h2, h3 { letter-spacing: -.03em; }
+h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); line-height: 1.1; margin: .5rem 0 1rem; }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.15; }
+h1 span, h2 span { color: $gold; }
+
+.eyebrow { color: $gold; font-size: .72rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; margin-bottom: .6rem; }
+.small-eyebrow { font-size: .66rem; }
+
+// Buttons
+.btn-gold, .btn-dark-tep {
+    display: inline-block; font-weight: 700; text-decoration: none; border-radius: 8px;
+    padding: .9rem 1.4rem; text-align: center; transition: transform .15s, filter .15s;
+    &:hover { transform: translateY(-1px); }
+}
+.btn-gold { background: $gold-grad; color: #1a1208; &:hover { color: #1a1208; filter: brightness(1.06); } }
+.btn-dark-tep { background: #1d1429; color: #fff; border: 1px solid $line; &:hover { color: #fff; border-color: $purple; } }
+
+// Promo bar + nav
+.promo-bar { background: $gold-grad; color: #1a1208; text-align: center; font-weight: 800; font-size: .8rem; letter-spacing: .08em; padding: .55rem 1rem; }
+.site-nav { border-bottom: 1px solid $line; padding: .7rem 0; background: $bg;
+    .brand { font-weight: 900; letter-spacing: .08em; text-decoration: none; font-size: .95rem; }
+    .nav-link-plain { text-decoration: none; font-size: .9rem; &:hover { color: $gold; } }
+    .btn-dark-tep { padding: .6rem 1rem; font-size: .9rem; }
 }
 
-.promo-bar {
-    background: $primary;
-    color: #111;
-    text-align: center;
-    font-weight: 700;
-    font-size: .875rem;
-    padding: .6rem 1rem;
+// Hero
+.hero {
+    padding: 4.5rem 0 4rem;
+    background: radial-gradient(60% 70% at 20% 45%, rgba(151, 100, 199, .22), transparent 70%), linear-gradient(115deg, #100918, #08070d 70%);
+    .hero-logo img { max-width: 380px; filter: drop-shadow(0 0 40px rgba(151, 100, 199, .35)); }
+    .hero-lead { color: $muted; font-size: 1.1rem; max-width: 36rem; margin-bottom: 1.6rem; }
 }
-
-.navbar { background: $body-bg; }
-
-.price-row {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 1rem;
-    .price-old { color: #9aa5b1; text-decoration: line-through; font-size: 1.5rem; }
-    .price-new { color: $primary; font-size: 3rem; font-weight: 900; line-height: 1; }
-    .price-off { background: $tep-green; color: #052; font-weight: 700; border-radius: .5rem; padding: .2rem .6rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-size: .82rem; color: $muted;
+    span::before { content: "◆"; color: $gold; font-size: .6rem; margin-right: .4rem; vertical-align: middle; }
 }
-
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: .75rem;
-    .cd {
-        background: rgba(11, 13, 16, .75);
-        border: 1px solid $tep-line;
-        border-radius: .75rem;
-        min-width: 4.5rem;
-        padding: .75rem .5rem;
-        b { display: block; font-size: 1.9rem; font-variant-numeric: tabular-nums; }
-        small { color: #cfd6dd; font-size: .7rem; text-transform: uppercase; letter-spacing: 1px; }
+.countdown { display: flex; gap: .6rem;
+    .cd { background: $panel; border: 1px solid $line; border-radius: 8px; min-width: 4.4rem; padding: .6rem .4rem; text-align: center;
+        b { display: block; font-size: 1.7rem; font-variant-numeric: tabular-nums; color: $gold; line-height: 1.1; }
+        small { color: $muted; font-size: .66rem; text-transform: uppercase; letter-spacing: .12em; }
     }
 }
+.cd-note { color: $muted; font-size: .82rem; margin: .6rem 0 0; }
 
-.features-icons, .testimonials, .faq { background: $tep-surface; }
-.showcase .showcase-text { background: $body-bg; }
-
-.offer-section {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-    .offer-card {
-        background: linear-gradient(180deg, #1c2129, #14181e);
-        border: 2px solid $primary;
-        border-radius: 1.4rem;
-        padding: 2rem;
-    }
-    .offer-card.featured { box-shadow: 0 0 0 4px rgba($primary, .2); }
-    .offer-card h3 { font-size: 1.3rem; }
-    .goat-card { max-width: 48rem; background: $tep-card; border: 1px solid $tep-line; border-radius: 1.2rem; padding: 2rem; }
-    .offer-list {
-        list-style: none;
-        padding: 0;
-        margin: 1.5rem 0;
-        li {
-            position: relative;
-            padding: .6rem 0 .6rem 1.9rem;
-            border-bottom: 1px solid $tep-line;
-            &::before { content: "✓"; position: absolute; left: .25rem; color: $tep-green; font-weight: 900; }
-        }
-    }
+.strip { display: flex; align-items: center; justify-content: center; gap: 1.2rem; background: $panel-2; border-top: 1px solid $line; border-bottom: 1px solid $line;
+    padding: 1.4rem 1rem; color: #d9cfe6; font-size: .78rem; letter-spacing: .2em; text-align: center;
+    .line { flex: 0 1 4rem; height: 1px; background: $line; }
 }
 
-.faq {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-    .accordion { max-width: 48rem; }
-    .accordion-item { background: $tep-card; border-color: $tep-line; color: $body-color; }
-    .accordion-button { background: $tep-card; color: $body-color; font-weight: 700; font-size: 1.05rem;
-        &:not(.collapsed) { color: $primary; box-shadow: none; }
-        &::after { filter: invert(1); }
+// Pillars
+.pillars { .pillar-row { border-top: 1px solid $line; border-bottom: 1px solid $line; margin-top: 2rem; padding: 2rem 0; }
+    h3 { font-size: 1.1rem; } p.muted { font-size: .9rem; }
+}
+
+// Plans
+.plans { padding-top: 2rem; }
+.plan-card { background: linear-gradient(135deg, #1b1028, #0e0a15); border: 1px solid rgba(151, 100, 199, .45); border-radius: 16px; padding: 1.8rem;
+    display: flex; flex-direction: column;
+    &.plan-gold { background: linear-gradient(130deg, #2b2032, #15101f); border-color: rgba(230, 200, 124, .55); }
+    .plan-name { font-size: 1.7rem; margin: 0; }
+    .plan-sub { color: $gold; font-size: 1.1rem; margin-bottom: 1.2rem; }
+    .plan-list { list-style: none; padding: 0; margin: 0 0 1.5rem;
+        li { border-left: 2px solid $purple; padding: .1rem 0 .1rem .8rem; margin-bottom: .9rem; }
+        strong { display: block; font-size: .9rem; }
+        span { color: $muted; font-size: .82rem; }
     }
-    .accordion-body { color: #9aa5b1; }
+    .plan-price { margin-top: auto; margin-bottom: 1rem; display: flex; align-items: baseline; flex-wrap: wrap; gap: .3rem .8rem;
+        s { color: $muted; font-size: 1.2rem; }
+        b { font-size: 2.2rem; font-weight: 900; letter-spacing: -.03em; }
+        small { color: $muted; font-size: .75rem; }
+    }
+}
+.tag { font-size: .62rem; font-weight: 700; letter-spacing: .04em; border-radius: 4px; padding: .3rem .5rem; white-space: nowrap; }
+.tag-purple { background: rgba(151, 100, 199, .22); color: #d8c2f2; }
+.tag-gold { background: rgba(230, 200, 124, .15); color: $gold; }
+
+.goat-card { background: linear-gradient(125deg, #251535, #110b1b); border: 1px solid rgba(230, 200, 124, .55); border-radius: 16px; padding: 2.2rem; }
+.goat-badge { background: rgba(9, 7, 14, .5); border: 1px solid $line; border-radius: 14px; padding: 2rem 1rem;
+    i { font-size: 2.2rem; color: $gold; }
+    .goat-word { font-size: 3.4rem; font-weight: 900; color: $gold; letter-spacing: -.03em; line-height: 1; margin: .4rem 0 .6rem; }
+    small { color: $muted; font-size: .66rem; letter-spacing: .22em; }
 }
 
-.footer {
-    background: $body-bg;
-    border-top: 1px solid $tep-line;
-    a { color: $body-color; text-decoration: none; &:hover { color: $primary; } }
-    .risk { background: $tep-surface; border: 1px solid $tep-line; border-radius: .75rem; padding: 1rem; color: #9aa5b1; }
+// Testimonials
+.testimonials-tep { background: $panel-2; border-top: 1px solid $line; border-bottom: 1px solid $line; }
+.quote-card { background: $panel; border: 1px solid $line; border-radius: 16px; padding: 1.6rem; height: 100%; margin: 0;
+    p { font-size: 1rem; } footer { color: $gold; font-weight: 700; font-size: .85rem; }
 }
 
-.wa-button {
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    z-index: 1030;
-    background: #25d366;
-    color: #05301a;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 999px;
-    padding: .75rem 1.1rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+// FAQ
+.faq { .accordion { max-width: 50rem; }
+    .accordion-item { background: $panel; border-color: $line; color: #faf7ff; }
+    .accordion-button { background: $panel; color: #faf7ff; font-weight: 700; font-size: 1rem;
+        &:not(.collapsed) { color: $gold; box-shadow: none; } &:focus { box-shadow: none; } &::after { filter: invert(1); }
+    }
+    .accordion-body { color: $muted; }
+}
+
+.final-cta { background: radial-gradient(60% 80% at 50% 50%, rgba(151, 100, 199, .18), transparent 70%); border-top: 1px solid $line; }
+
+// Footer
+.site-footer { border-top: 1px solid $line; padding: 2.5rem 0 5rem; color: $muted; font-size: .85rem;
+    a { color: $muted; &:hover { color: $gold; } }
+    .risk { background: $panel-2; border: 1px solid $line; border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem; font-size: .8rem; }
+}
+
+.wa-button { position: fixed; right: 1rem; bottom: 1rem; z-index: 1030; background: #25d366; color: #05301a; font-weight: 700; text-decoration: none;
+    border-radius: 999px; padding: .7rem 1.1rem; box-shadow: 0 6px 20px rgba(0, 0, 0, .45); font-size: .9rem;
     &:hover { color: #05301a; filter: brightness(1.05); }
 }
 
 body.ended .cta { pointer-events: none; opacity: .5; }
 
+@media (max-width: 991.98px) {
+    .hero { padding-top: 2.5rem; .hero-logo img { max-width: 220px; } }
+}
 @media (max-width: 575.98px) {
-    .countdown .cd { min-width: 3.9rem; b { font-size: 1.5rem; } }
-    .price-row .price-new { font-size: 2.5rem; }
+    section { padding: 4rem 0; }
+    .countdown .cd { min-width: 3.9rem; b { font-size: 1.4rem; } }
+    .strip { font-size: .66rem; letter-spacing: .12em; .line { display: none; } }
 }

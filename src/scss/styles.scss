@@ -1,21 +1,11 @@
-// 
-// Styles
-// 
+//
+// Styles · Trading en Paz Black Friday
+//
 
 @import "./variables";
 
 // Import Bootstrap
 @import "bootstrap/scss/bootstrap.scss";
 
-// Global CSS
+// Trading en Paz theme (matches tradingenpaz.com)
 @import "./global";
-
-// Components
-@import "./components/icons";
-
-// Sections
-@import "./sections/masthead";
-@import "./sections/showcase";
-@import "./sections/testimonials";
-@import "./sections/call-to-action";
-@import "./sections/footer";
